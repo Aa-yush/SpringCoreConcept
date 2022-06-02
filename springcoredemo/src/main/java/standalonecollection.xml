@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:util="http://www.springframework.org/schema/util"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/context
+       http://www.springframework.org/schema/context/spring-context.xsd
+       http://www.springframework.org/schema/util
+       http://www.springframework.org/schema/util/spring-util.xsd
+       ">
+       
+       <util:list list-class="java.util.ArrayList" id="stuMarks">
+    		    <value>98</value>
+				<value>12</value>
+				<value>56</value>
+				<value>94</value>
+       </util:list>
+       
+       <util:set set-class="java.util.HashSet" id="stuPhn" >
+       			<value>98</value>
+				<value>12</value>
+				<value>56</value>
+				<value>94</value>
+       
+       </util:set>
+       
+       <util:map map-class="java.util.HashMap" id="stuMap">
+       			<entry key="Java" value="6 months" />
+				<entry key="Python" value="12 months" />
+       </util:map>
+
+
+
+	<bean class="com.springcore.standalone.collections.Student"
+		name="studentObject">
+		
+		<property name="studentId" value="101" />
+		<property name="studentMarks" ref="stuMarks" />
+		<property name="studentPhoneNumbers" ref="stuPhn" />
+		<property name="studentCourses" ref="stuMap"/>
+
+
+	</bean>
+
+</beans>
