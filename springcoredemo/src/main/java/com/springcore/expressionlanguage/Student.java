@@ -22,6 +22,9 @@ public class Student {
 	@Value("#{ new java.lang.String('My Name is ayush')}")
 	private String stmt;
 
+	@Value("#{ 18 > 16 }")
+	private boolean studentAgeVerify;
+
 	public String getStmt() {
 		return stmt;
 	}
@@ -67,19 +70,29 @@ public class Student {
 		// TODO Auto-generated constructor stub
 	}
 
-	public Student(String studentId, String studentName, double sqrtValue, double piValue, String stmt) {
+	public boolean isStudentAgeVerify() {
+		return studentAgeVerify;
+	}
+
+	public void setStudentAgeVerify(boolean studentAgeVerify) {
+		this.studentAgeVerify = studentAgeVerify;
+	}
+
+	public Student(String studentId, String studentName, double sqrtValue, double piValue, String stmt,
+			boolean studentAgeVerify) {
 		super();
 		this.studentId = studentId;
 		this.studentName = studentName;
 		this.sqrtValue = sqrtValue;
 		this.piValue = piValue;
 		this.stmt = stmt;
+		this.studentAgeVerify = studentAgeVerify;
 	}
 
 	@Override
 	public String toString() {
 		return "Student [studentId=" + studentId + ", studentName=" + studentName + ", sqrtValue=" + sqrtValue
-				+ ", piValue=" + piValue + ", stmt=" + stmt + "]";
+				+ ", piValue=" + piValue + ", stmt=" + stmt + ", studentAgeVerify=" + studentAgeVerify + "]";
 	}
 
 }
